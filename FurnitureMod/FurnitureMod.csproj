@@ -1,92 +1,60 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{FA7A7B14-8DDC-49EA-A304-9D77577842F9}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FurnitureMod</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+
+    <TargetFramework>netstandard2.1</TargetFramework>
     <AssemblyName>BetterFurniturePlacementMod</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
+    <Description>BetterFurniturePlacementMod</Description>
+    <Product>BetterFurniturePlacementMod</Product>
+    <Title>BetterFurniturePlacementMod</Title>
+    <Version>0.5.0</Version>
+    <LangVersion>latest</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <RootNamespace>FurnitureMod</RootNamespace>
+    <RestoreAdditionalProjectSources>
+      https://api.nuget.org/v3/index.json;
+      https://nuget.bepinex.dev/v3/index.json;
+      https://nuget.samboy.dev/v3/index.json
+    </RestoreAdditionalProjectSources>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="BepInEx.Core, Version=6.0.0.572, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Libraries\BepInEx.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="netstandard" />
-    <Reference Include="BepInEx.IL2CPP" Version="6.0.0-*" IncludeAssets="compile" />
-    <Reference Include="BepInEx.Core" Version="6.0.0-*" IncludeAssets="compile" />
-    <Reference Include="BepInEx.PluginInfoProps" Version="1.*" />
-    <Reference Include="UnityEngine.InputLegacyModule">
-      <HintPath>..\Libraries\UnityEngine.InputLegacyModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.InputModule">
-      <HintPath>..\Libraries\UnityEngine.InputModule.dll</HintPath>
-    </Reference>
-    <Reference Include="0Harmony">
-      <HintPath>..\Libraries\0Harmony.dll</HintPath>
-    </Reference>
+    <PackageReference Include="BepInEx.Core" Version="6.0.0-be.577" />
+    <PackageReference Include="BepInEx.IL2CPP" Version="6.0.0-be.577" />
+    <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="Assembly-CSharp">
-      <HintPath>..\Libraries\Assembly-CSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="BepInEx.IL2CPP">
-      <HintPath>..\Libraries\BepInEx.IL2CPP.dll</HintPath>
+      <HintPath>libs\v577\Assembly-CSharp.dll</HintPath>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Reference>
     <Reference Include="Il2Cppmscorlib">
-      <HintPath>..\Libraries\Il2Cppmscorlib.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
-    <Reference Include="UnhollowerBaseLib">
-      <HintPath>..\Libraries\UnhollowerBaseLib.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine">
-      <HintPath>..\Libraries\UnityEngine.dll</HintPath>
+      <HintPath>libs\v577\Il2Cppmscorlib.dll</HintPath>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>..\Libraries\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>libs\v577\UnityEngine.CoreModule.dll</HintPath>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Reference>
-    <Reference Include="UnityEngine.PhysicsModule">
-      <HintPath>..\Libraries\UnityEngine.PhysicsModule.dll</HintPath>
+    <Reference Include="UnityEngine.InputModule">
+      <HintPath>libs\v577\UnityEngine.InputModule.dll</HintPath>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Reference>
-    <Reference Include="UnityEngine.TextRenderingModule">
-      <HintPath>..\Libraries\UnityEngine.TextRenderingModule.dll</HintPath>
+    <Reference Include="UnityEngine.InputLegacyModule">
+      <HintPath>libs\v577\UnityEngine.InputLegacyModule.dll</HintPath>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>..\Libraries\UnityEngine.UI.dll</HintPath>
+      <HintPath>libs\v577\UnityEngine.UI.dll</HintPath>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Reference>
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="FurniturePlacement.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Update="BetterFurniturePlacementMod.cfg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
