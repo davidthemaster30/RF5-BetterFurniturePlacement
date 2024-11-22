@@ -26,27 +26,30 @@
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
       <HintPath>libs\Assembly-CSharp.dll</HintPath>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <Private>false</Private>
     </Reference>
     <Reference Include="Il2Cppmscorlib">
       <HintPath>libs\Il2Cppmscorlib.dll</HintPath>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <Private>false</Private>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>libs\UnityEngine.CoreModule.dll</HintPath>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <Private>false</Private>
     </Reference>
     <Reference Include="UnityEngine.InputModule">
       <HintPath>libs\UnityEngine.InputModule.dll</HintPath>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <Private>false</Private>
     </Reference>
     <Reference Include="UnityEngine.InputLegacyModule">
       <HintPath>libs\UnityEngine.InputLegacyModule.dll</HintPath>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <Private>false</Private>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>libs\UnityEngine.UI.dll</HintPath>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="BepInEx.KeyboardShortcut">
+      <HintPath>libs\BepInEx.KeyboardShortcut.dll</HintPath>
     </Reference>
   </ItemGroup>
 
