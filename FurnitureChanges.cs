@@ -17,7 +17,7 @@ public static class FurnitureChangesPatch
     internal static ConfigEntry<bool> EnableFurnitureSnapping;
     internal static ConfigEntry<bool> EnableAlwaysIgnoreCollison;
     internal static ConfigEntry<KeyboardShortcut> ToggleKey;
-    internal static ConfigEntry<RF5Input.Key> ToggleButton;
+    internal static ConfigEntry<uint> ToggleButton;
     internal static ConfigEntry<KeyboardShortcut> IncreaseGridKey;
     internal static ConfigEntry<KeyboardShortcut> DecreaseGridKey;
 
@@ -30,7 +30,7 @@ public static class FurnitureChangesPatch
         EnableAlwaysIgnoreCollison = Config.Bind("Always Ignore Placement Collison", "AlwaysIgnore", false, "Set to true to always Ignore Furniture Placement Collison");
         EnableFurnitureSnapping = Config.Bind("Furniture Snap to Grid", "SnapToGrid", true, "Set to true to snap furniture to a grid");
         ToggleKey = Config.Bind("Key to Ignore Placement", "IgnoreKey", new KeyboardShortcut(KeyCode.LeftShift), "Set the Key you wish to press while Holding Furniture to Ignore Placement Collison (Not required if AlwaysIgnore is true)");
-        ToggleButton = Config.Bind("Button to Ignore Placement", "IgnoreButton", RF5Input.Key.R, ToggleButtonDescription);
+        ToggleButton = Config.Bind("Button to Ignore Placement", "IgnoreButton", (uint)RF5Input.Key.R, ToggleButtonDescription);
         IncreaseGridKey = Config.Bind("Button to Increase Grid Size", "IncreaseGrid", new KeyboardShortcut(KeyCode.Period), "Set the Key you wish to press to Increase grid size");
         DecreaseGridKey = Config.Bind("Button to Decrease Grid Size", "DecreaseGrid", new KeyboardShortcut(KeyCode.Comma), "Set the Key you wish to press to Decrease grid size");
     }
@@ -45,7 +45,7 @@ public static class FurnitureChangesPatch
             newButton.GetComponent<RectTransform>().sizeDelta = new Vector2(400, 103);
             newButton.GetChild(0).GetComponent<RectTransform>().anchoredPosition += new Vector2(-57.7001f, 0);
             newButton.GetChild(1).GetComponent<RectTransform>().sizeDelta = new Vector2(400, 30);
-            int testKeyImage = Convert.ToInt32(Enum.Parse(typeof(ButtonSpriteManager.KeyImageType), ToggleButton.Value.ToString()));
+            int testKeyImage = Convert.ToInt32(Enum.Parse(typeof(ButtonSpriteManager.KeyImageType), ToggleKey.Value.ToString()));
 
             newButton.GetChild(0).GetComponent<ButtonImageController>().nowButtonType = (ButtonSpriteManager.KeyImageType)testKeyImage;
             newButton.GetChild(0).GetComponent<ButtonImageController>().startButtonType = (ButtonSpriteManager.KeyImageType)testKeyImage;
@@ -71,12 +71,12 @@ public static class FurnitureChangesPatch
             }
             else
             {
-                if (ToggleKey.Value.IsDown() || RF5Input.Pad.Edge(ToggleButton.Value))
+                if (ToggleKey.Value.IsDown() || RF5Input.Pad.Edge((RF5Input.Key)ToggleButton.Value))
                 {
                     shadowIgnore = true;
                 }
 
-                if (ToggleKey.Value.IsUp() || RF5Input.Pad.End(ToggleButton.Value))
+                if (ToggleKey.Value.IsUp() || RF5Input.Pad.End((RF5Input.Key)ToggleButton.Value))
                 {
                     shadowIgnore = false;
                 }
