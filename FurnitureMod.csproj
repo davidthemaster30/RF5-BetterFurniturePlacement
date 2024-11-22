@@ -3,7 +3,6 @@
     <ProjectGuid>{FA7A7B14-8DDC-49EA-A304-9D77577842F9}</ProjectGuid>
     <ImplicitUsings>enable</ImplicitUsings>
     <TargetFramework>net6.0</TargetFramework>
-    <TargetFrameworks>net6.0;netstandard2.1</TargetFrameworks>
     <AssemblyName>BetterFurniturePlacementMod</AssemblyName>
     <Description>BetterFurniturePlacementMod</Description>
     <Product>BetterFurniturePlacementMod</Product>
@@ -19,68 +18,34 @@
     </RestoreAdditionalProjectSources>
   </PropertyGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
-    <PackageReference Include="BepInEx.IL2CPP" Version="6.0.0-be.725" />
+  <ItemGroup >
     <PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.725" IncludeAssets="compile" />
     <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.1'">
-    <PackageReference Include="BepInEx.Core" Version="6.0.0-be.577" />
-    <PackageReference Include="BepInEx.IL2CPP" Version="6.0.0-be.577" />
-    <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'net6.0'">
+  <ItemGroup>
     <Reference Include="Assembly-CSharp">
-      <HintPath>libs\v674\Assembly-CSharp.dll</HintPath>
+      <HintPath>libs\Assembly-CSharp.dll</HintPath>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Reference>
     <Reference Include="Il2Cppmscorlib">
-      <HintPath>libs\v674\Il2Cppmscorlib.dll</HintPath>
+      <HintPath>libs\Il2Cppmscorlib.dll</HintPath>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>libs\v674\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>libs\UnityEngine.CoreModule.dll</HintPath>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Reference>
     <Reference Include="UnityEngine.InputModule">
-      <HintPath>libs\v674\UnityEngine.InputModule.dll</HintPath>
+      <HintPath>libs\UnityEngine.InputModule.dll</HintPath>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Reference>
     <Reference Include="UnityEngine.InputLegacyModule">
-      <HintPath>libs\v674\UnityEngine.InputLegacyModule.dll</HintPath>
+      <HintPath>libs\UnityEngine.InputLegacyModule.dll</HintPath>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>libs\v674\UnityEngine.UI.dll</HintPath>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Reference>
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.1'">
-    <Reference Include="Assembly-CSharp">
-      <HintPath>libs\v577\Assembly-CSharp.dll</HintPath>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Reference>
-    <Reference Include="Il2Cppmscorlib">
-      <HintPath>libs\v577\Il2Cppmscorlib.dll</HintPath>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Reference>
-    <Reference Include="UnityEngine.CoreModule">
-      <HintPath>libs\v577\UnityEngine.CoreModule.dll</HintPath>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Reference>
-    <Reference Include="UnityEngine.InputModule">
-      <HintPath>libs\v577\UnityEngine.InputModule.dll</HintPath>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Reference>
-    <Reference Include="UnityEngine.InputLegacyModule">
-      <HintPath>libs\v577\UnityEngine.InputLegacyModule.dll</HintPath>
-      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>libs\v577\UnityEngine.UI.dll</HintPath>
+      <HintPath>libs\UnityEngine.UI.dll</HintPath>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Reference>
   </ItemGroup>
