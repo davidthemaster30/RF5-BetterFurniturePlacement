@@ -7,7 +7,7 @@
     <Description>BetterFurniturePlacementMod</Description>
     <Product>BetterFurniturePlacementMod</Product>
     <Title>BetterFurniturePlacementMod</Title>
-    <Version>0.5.0</Version> 
+    <Version>0.5.0</Version>
     <LangVersion>latest</LangVersion>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <RootNamespace>FurnitureMod</RootNamespace>
@@ -16,9 +16,11 @@
       https://nuget.bepinex.dev/v3/index.json;
       https://nuget.samboy.dev/v3/index.json
     </RestoreAdditionalProjectSources>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <ItemGroup >
+  <ItemGroup>
     <PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.725" IncludeAssets="compile" />
     <PackageReference Include="BepInEx.PluginInfoProps" Version="2.*" />
   </ItemGroup>
