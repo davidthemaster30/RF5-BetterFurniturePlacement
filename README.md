@@ -1,17 +1,19 @@
 # Rune Factory 5 - Better Furniture Placement
 
-![Better Placement](https://user-images.githubusercontent.com/7892633/179655548-7c3bf195-e8f5-4124-bb77-5aba4add27d6.png)
+![Better Placement](https://raw.githubusercontent.com/davidthemaster30/RF5-BetterFurniturePlacement/ab4d53afae9443b4042a191dcd8d93ab7fd5b684/screenshot.png)
 
 Allows you to HOLD Left Shift(Default) to ignore the placement collision. This will allow you to place furniture wherever you want!
 Also includes snapping to grid on by default.
 
 ## Installation
-1. Get [Latest Release](https://github.com/JayJay34/RF5-BetterFurniturePlacement/releases)
-2. Extract the contents of the BetterFurniturePlacementMod.zip into the Steam Folder ("steamapps\common\Rune Factory 5")
-3. Run the Game and HOLD "Left Shift" while placing a piece of Furniture to Ignore Collision.
+1. Install [BepInEx BE v647 or later](https://builds.bepinex.dev/projects/bepinex_be) (IL2CPP_x64)
+or install other base mod BepInEx already included (like [RF5Fix v0.1.5 mod](https://github.com/Lyall/RF5Fix))
+2. Get [Latest Release](https://github.com/davidthemaster30/RF5-BetterFurniturePlacement/releases)
+3. Extract the contents of downloaded zip into `<GameDirectory>\BepInEx\plugins`. 
+4. (Optional) Get the [BepInEx Configuration Manager](https://github.com/BepInEx/BepInEx.ConfigurationManager)
 
 ### OPTIONAL
-Configure settings in "\BepInEx\config\BetterFurniturePlacementMod.cfg"
+Configure settings in "\BepInEx\config\BetterFurniturePlacementMod.cfg" or via BepInEx Configuration Manager ingame with F1.
 - AlwaysIgnore - Always ignores placement collision, you don't need to hold any button.
 - SnapToGrid - Toggles the snapping to grid
 - IgnoreButton - Controller Button needed to be held to ignore placement collision.
