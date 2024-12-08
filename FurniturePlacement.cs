@@ -7,25 +7,26 @@ using UnityEngine;
 
 namespace FurnitureMod;
 
-[BepInPlugin(pluginGuid, pluginName, pluginVersion)]
+[BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
 [BepInProcess(GameProcessName)]
 public class FurnitureModPlugin : BasePlugin
 {
-    #region PluginInfo
-    internal const string pluginGuid = "BetterFurniturePlacementMod";
-    internal const string pluginName = "Better Furniture Placement Mod";
-    internal const string pluginVersion = "0.5";
     private const string GameProcessName = "Rune Factory 5.exe";
-    #endregion
 
     internal static new ManualLogSource Log = BepInEx.Logging.Logger.CreateLogSource("FurnitureMod");
 
+    internal void LoadConfig()
+    {
+        FurnitureChangesPatch.LoadConfig(Config);
+    }
+
     public override void Load()
     {
-        Log.LogInfo($"Plugin {pluginGuid} is loaded!");
+        Log.LogInfo($"Plugin {MyPluginInfo.PLUGIN_NAME} {MyPluginInfo.PLUGIN_VERSION} is loading!");
 
-        FurnitureChangesPatch.LoadConfig(Config);
-
+        LoadConfig();
         Harmony.CreateAndPatchAll(typeof(FurnitureChangesPatch));
+
+        Log.LogInfo($"Plugin {MyPluginInfo.PLUGIN_NAME} {MyPluginInfo.PLUGIN_VERSION} is loaded!");
     }
 }
